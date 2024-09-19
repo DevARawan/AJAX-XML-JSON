@@ -1,11 +1,11 @@
 {
-  "name": "Asif Shahzad",
-  "email": "asifsh7@gmail.com",
+  "name": "AAAAA SSSSS",
+  "email": "aaaaa01@xyz.com",
   "age": 36,
-  "city": "Lahore",
-  "courses": ["Web", "OOP"],
+  "city": "LHR",
+  "courses": ["Web", "OOP", "databases"],
   "address": {
-    "streetAddress": "100 A",
-    "town": "Model Town"
+    "streetAddress": "0000 A",
+    "town": "XYZ Town"
   }
 }
