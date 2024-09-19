@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h2>AJAX with JSON</h2>
+  <button type="button" onclick="loadDoc()">Request data</button>
+  <div id="demo"></div>
+
+  <script>
+    function loadDoc() {
+      var httpReq = new XMLHttpRequest();
+
+      httpReq.onreadystatechange = function () {
+        // we should not expect, the request would always end up with success. 
+        // so always check the HTTP status code. 
+        // must return valid status codes when you are writing a server side component
+        if (httpReq.readyState == 4 && httpReq.status == 200) {
+          let userJson = httpReq.responseText;
+
+          // we have text, but we know it formatted as JSON.
+          // so we can parse this text. to make JS object
+
+          let user = JSON.parse(userJson);
+          // lets get some data from object and create a list, to demo
+                    
+          let listHtml = "<ol>";
+          for (let field in user) {
+            if (typeof user[field] == "string")
+              listHtml += "<li>" + field + " = " + user[field] + "</li>";
+          }
+          listHtml += "<li>" + user.address.streetAddress + "</li>";
+          listHtml += "</ol>";
+          document.getElementById("demo").innerHTML = listHtml;
+        }
+      };
+      httpReq.open("get", "get-data.txt", true);
+      httpReq.send();
+    }
+  </script>
+</body>
+
+</html>

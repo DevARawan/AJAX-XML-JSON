@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>AJAX with JSON</h2>
+    <button type="button" onclick="loadDoc()">Request data</button>
+    <div id="demo"></div>
+
+    <script>
+      function loadDoc() {
+        var httpReq = new XMLHttpRequest();
+
+        httpReq.onreadystatechange = function() {
+          if (httpReq.readyState == 4 && httpReq.status == 200) {
+            let userJson = httpReq.responseText;
+            alert(userJson);
+            //let respObj = JSON.parse(userJson);
+
+            // for (let emp of respObj.data) {
+            //   console.log(
+            //     emp["employee_name"] + " Sal: " + emp["employee_salary"]
+            //   );
+            // }
+            //document.getElementById("demo").innerHTML = userJson;
+          }
+        };
+        httpReq.open(
+          "get",
+          "http://dummy.restapiexample.com/api/v1/employee/18",
+          true
+        );
+        httpReq.send();
+      }
+    </script>
+  </body>
+</html>

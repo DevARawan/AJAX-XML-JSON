@@ -1,0 +1,9 @@
+
+Why we need standard data formats?
+Parser and generator are available in all programming languages,
+JSON and XML are:
+    1. Platform neutral 
+	2. Programming language independent
+	3. Text based / human readable
+	4. Generators and Parsers are available in all languages
+	5. Widely used, specially JSON in REST services
